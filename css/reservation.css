@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: #dcdcdc;
+}
+
+.icon-zhuye {
+    display: inline-block;
+    color: #f28500;
+    font-size: 40px;
+}
+
+input{
+    height: 50px;
+}
+
+h3{
+    background-color: #ffd966;
+}
+
+.payButton{
+    background-color: #f28500;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+
+

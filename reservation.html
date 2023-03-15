@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Reservation Page</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./iconfont/iconfont.css">
+    <link rel="stylesheet" href="./css/reservation.css">
+</head>
+<body>
+<div class="container">
+    <br><br>
+    <div class="row">
+        <div class="col-md-11"></div>
+        <div class="col-md-1">
+            <a href="./index.html">
+                <div class="iconfont icon-zhuye"></div>
+            </a>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-3">
+            <h3>&nbsp;&nbsp;Hotel Information</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-5">
+            <input type="text" name="" id="" class="form-control hotelInfo text-center" disabled>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-3">
+            <h3>&nbsp;&nbsp;Booking Information</h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">
+            <h4 class="text-center">Check-in date</h4>
+            <input type="text" name="" id="" class="form-control checkinDate text-center" disabled>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-2">
+            <h4 class="text-center">Check-out date</h4>
+            <input type="text" name="" id="" class="form-control checkoutDate text-center" disabled>
+        </div>
+    </div>
+    <br>
+
+    <div class="row">
+        <div class="col-md-3">
+            <h3>&nbsp;&nbsp;User Information</h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-5">
+            <input type="text" name="" id="" class="form-control userInfo text-center" disabled>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-3">
+            <h3>&nbsp;&nbsp;Payment Amount</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-5">
+            <input type="text" name="" id="" class="form-control paymentAmount text-center" disabled>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-9"></div>
+        <div class="col-md-2 text-center">
+            <a href="./payment.html">
+                <button class="form-control payButton">Pay</button>
+            </a>
+        </div>
+    </div>
+
+</div>
+<script src="/jquery-3.6.4.js"></script>
+
+<script>
+    const hotelInfo = document.querySelector('.hotelInfo')
+    const checkinDate = document.querySelector('.checkinDate')
+    const checkoutDate = document.querySelector('.checkoutDate')
+    const userInfo = document.querySelector('.userInfo')
+    userInfo.value = localStorage.getItem('username')
+    const paymentAmount = document.querySelector('.paymentAmount')
+    $.get('#', function (str) {
+        hotelInfo.value = str[0]
+        checkinDate.value = str[1]
+        checkoutDate.value = str[2]
+        paymentAmount.value = str[3]
+    })
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./iconfont/iconfont.css">
+    <link rel="stylesheet" href="./css/payment.css">
+</head>
+<body>
+<div class="container">
+    <br><br>
+    <div class="row">
+        <div class="col-md-11"></div>
+        <div class="col-md-1">
+            <a href="./index.html">
+                <div class="iconfont icon-zhuye"></div>
+            </a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+            <h3>&nbsp;&nbsp;Room Information</h3>
+        </div>
+    </div>
+
+    <br>
+    <div class="row">
+        <div class="col-md-2">
+            <h4 class="roomType"></h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <p class="roomInfo"></p>
+        </div>
+    </div>
+
+    <br><br>
+    <div class="row">
+        <div class="col-md-3">
+            <h3>&nbsp;&nbsp;Bank Card Information</h3>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-2 inputCardNumber">
+            &nbsp;&nbsp;&nbsp;Card number:
+        </div>
+        <div class="col-md-5">
+            <input type="text" name="cardNumber" id="" class="form-control cardNumber"
+                   placeholder="  Enter the card number">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="msg1 col-md-5"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 inputCardHolder">
+            &nbsp;&nbsp;&nbsp;Card holder:
+        </div>
+        <div class="col-md-5">
+            <input type="text" name="cardHolder" id="" class="form-control cardHolder"
+                   placeholder="  Enter the card holder">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="msg2 col-md-6"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-9"></div>
+        <div class="col-md-2 text-center">
+            <button class="form-control payButton">Pay</button>
+        </div>
+    </div>
+
+
+</div>
+
+
+<script src="./jquery-3.6.4.js"></script>
+<script>
+    const cardNumber = document.querySelector('[name=cardNumber]')
+    cardNumber.addEventListener('change', verifyCardNum)
+
+    function verifyCardNum() {
+        const msg1 = document.querySelector('.msg1')
+        const reg = /^[0-9]{16}$/
+        if (!reg.test(cardNumber.value)) {
+            msg1.innerHTML = '&nbsp;&nbsp;&nbsp;Please enter the correct credit card number (16 digits)'
+            return false
+        }
+        msg1.innerText = ''
+        return true
+    }
+
+
+    const cardHolder = document.querySelector('[name=cardHolder]')
+    cardHolder.addEventListener('change', verifyCardHolder)
+
+    function verifyCardHolder() {
+        const msg2 = document.querySelector('.msg2')
+        const reg = /^[a-zA-Z\s]{1,20}$/
+        if (!reg.test(cardHolder.value)) {
+            msg2.innerHTML = '&nbsp;&nbsp;&nbsp;Please enter the correct cardholder name (consisting of letters and spaces)'
+            return false
+        }
+        msg2.innerText = ''
+        return true
+    }
+
+    const payButton = document.querySelector('.payButton')
+
+    payButton.addEventListener('click', function (e) {
+        e.preventDefault()
+        let flag = true
+        if (!verifyCardNum()) {
+            flag = false
+        }
+        if (!verifyCardHolder()) {
+            flag = false
+        }
+
+        if (flag === false) {
+            return
+        }
+        alert("Payment successfully")
+        location.href = './index.html'
+    })
+
+    const roomType = document.querySelector('.roomType')
+    const roomInfo = document.querySelector('.roomInfo')
+
+    $.get('#', function (str) {
+        roomType.innerHTML = str[0]
+        roomInfo.innerHTML = str[1]
+    })
+
+
+</script>
+
+
+</body>
+</html>

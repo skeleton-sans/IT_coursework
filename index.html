@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./iconfont/iconfont.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+<div class="container">
+    <br>
+    <div class="row">
+        <div class="col-md-10"></div>
+
+        <div class="col-md-1 text-center">
+            <a href="./sign_up.html">
+                <button class="signUp form-control">sign up</button>
+            </a>
+            <div class="hi text-left"></div>
+        </div>
+        <div class="col-md-1 text-center">
+            <a href="./log_in.html">
+                <button class="logIn form-control">log in</button>
+            </a>
+            <button class="logOut form-control">log out</button>
+        </div>
+    </div>
+    <br><br><br><br>
+    <form action="" class="form">
+        <div class="row">
+
+            <div class="col-md-4"></div>
+
+            <div class="col-md-2 text-center">
+                <div class="checkinDate">check-in date</div>
+            </div>
+            <div class="col-md-2 text-center">
+                <div class="checkoutDate">check-out date</div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-4"></div>
+
+            <div class="col-md-2 text-center">
+                <label>
+                    <input type="date" name="checkinDate" value="2023-03-14"
+                           class="form-control">
+                </label>
+            </div>
+            <div class="col-md-2 text-center">
+                <label>
+                    <input type="date" name="checkoutDate" value="2023-03-15"
+                           class="form-control">
+                </label>
+            </div>
+        </div>
+        <br><br><br>
+
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-3 text-center">
+                <div class="roomNum">Number of rooms to be reserved</div>
+            </div>
+            <div class="col-md-3 text-center">
+                <div class="guestNum">Number of guest staying</div>
+            </div>
+        </div>
+
+        <br>
+        <div class="row">
+            <div class="col-md-5"></div>
+            <div class="col-md-1 text-center">
+                <label for="roomNum"><select name="roomNum" id="roomNum" class="form-control">
+                    <option selected>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                </select> room(s)</label>
+            </div>
+            <div class="col-md-1 text-center">
+                <label for="guestNum"><select name="guestNum" id="guestNum" class="form-control">
+                    <option selected>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                </select> guest(s)</label>
+            </div>
+        </div>
+        <br><br>
+
+        <div class="row">
+            <div class="col-md-5"></div>
+            <div class="col-md-2 text-center">
+                <button type="submit" class="search"><span class="iconfont icon-sousuo"></span>search</button>
+            </div>
+        </div>
+
+    </form>
+
+</div>
+<script src="./jquery-3.6.4.js"></script>
+
+<script>
+    const checkinDate = document.querySelector('[name=checkinDate]')
+    const checkoutDate = document.querySelector('[name=checkoutDate]')
+    checkinDate.max = checkoutDate.value
+    checkoutDate.min = checkinDate.value
+    checkinDate.addEventListener('change', function () {
+        checkoutDate.min = checkinDate.value
+    })
+    checkoutDate.addEventListener('change', function () {
+        checkinDate.max = checkoutDate.value
+    })
+
+    const username = localStorage.getItem('username')
+    if (username) {
+        const logIn = document.querySelector('.logIn')
+        const signUp = document.querySelector('.signUp')
+        const hi = document.querySelector('.hi')
+        const logOut = document.querySelector(".logOut")
+
+        logIn.style.display = 'none'
+        signUp.style.display = 'none'
+        hi.style.display = 'inline-block'
+        hi.innerHTML = `Hi, ${username}!`
+        logOut.style.display = 'inline-block'
+    }
+
+
+    $('form').submit(function (e) {
+        e.preventDefault()
+        if (!username) {
+            alert('Please login first')
+            return location.href = "./log_in.html"
+        }
+
+
+        const checkinDate = $('input[name=checkinDate]').val()
+        const checkoutDate = $('input[name=checkoutDate]').val()
+        const roomNum = $('select[name=roomNum]').val()
+        const guestNum = $('select[name=guestNum]').val()
+        $.get('', {checkinDate: checkinDate, checkoutDate: checkoutDate, roomNum: roomNum, guestNum: guestNum})
+        location.href = './search_result.html'
+    })
+
+    const logOut = document.querySelector('.logOut')
+    logOut.addEventListener('click', function () {
+        localStorage.removeItem('username')
+        location.reload()
+    })
+
+
+
+</script>
+
+
+</body>
+</html>

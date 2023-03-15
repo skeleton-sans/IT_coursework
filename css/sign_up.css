@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: #dcdcdc;
+}
+
+input{
+    border-radius: 30px;
+}
+
+button{
+    border-radius: 30px;
+}
+
+
+.icon-zhuye {
+    display: inline-block;
+    color: #f28500;
+    font-size: 40px;
+}
+
+.void1 {
+    height: 100px;
+}
+
+.inputUserName {
+    font-weight: 700;
+    font-size: 24px;
+}
+
+input {
+    width: 300px;
+    height: 40px;
+    border: black solid 5px;
+    font-size: 20px;
+}
+
+.msg1 {
+    height: 30px;
+    font-size: 14px;
+    font-weight: 700;
+    color: red;
+}
+
+.msg2 {
+    height: 30px;
+    font-size: 14px;
+    font-weight: 700;
+    color: red;
+}
+
+.msg3 {
+    height: 30px;
+    font-size: 14px;
+    font-weight: 700;
+    color: red;
+}
+
+.inputPassword {
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.confirm {
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.submit {
+    height: 60px;
+    font-weight: 700;
+}
+
+.submitButton {
+    width: 150px;
+    height: 50px;
+    background-color: #f28500;
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+    border: black solid 4px;
+}
+
+.already{
+    height: 30px;
+    font-weight: 700;
+}
+
+.logIn{
+    text-align: center;
+    height: 40px;
+}
+
+.logInButton{
+    width: 100px;
+    height: 30px;
+    background-color: #f28500;
+    color:white;
+    font-size: 16px;
+    font-weight: 700;
+    border: black solid 4px;
+}
+
+

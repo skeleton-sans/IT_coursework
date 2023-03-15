@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: #dcdcdc;
+}
+
+.hi {
+    display: none;
+    font-size: 15px;
+    font-weight: 700;
+    color: black;
+}
+
+.logOut {
+    display: none;
+    width: 90px;
+    height: 40px;
+    background-color: #f28500;
+    border: black solid 3px;
+    font-size: 15px;
+    font-weight: 700;
+    color: white;
+    border-radius: 30px;
+}
+
+.signUp, .logIn {
+    width: 90px;
+    height: 40px;
+    background-color: #f28500;
+    border: black solid 3px;
+    font-size: 15px;
+    font-weight: 700;
+    color: white;
+    border-radius: 30px;
+}
+
+
+.checkinDate {
+    background-color: #ffd966;
+    border: black solid 4px;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 30px;
+}
+
+.checkoutDate {
+    background-color: #ffd966;
+    border: black solid 4px;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 30px;
+}
+
+.roomNum {
+    background-color: #ffd966;
+    border: black solid 4px;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 30px;
+}
+
+
+.guestNum {
+    background-color: #ffd966;
+    border: black solid 4px;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 30px;
+}
+
+
+button {
+    width: 200px;
+    height: 60px;
+    background-color: #f28500;
+    border: black solid 5px;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 30px;
+}
+
+
+.icon-sousuo {
+    font-size: 24px;
+    margin-right: 30px;
+}

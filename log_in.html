@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Log In Page</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./iconfont/iconfont.css">
+    <link rel="stylesheet" href="./css/log_in.css">
+</head>
+<body>
+<div class="container">
+    <br><br>
+    <div class="row">
+        <div class="col-md-1">
+            <a href="./index.html">
+                <div class="iconfont icon-zhuye"></div>
+            </a>
+        </div>
+    </div>
+    <br><br><br><br>
+    <form action="#">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="inputUserName col-md-1">username:</div>
+            <div class="col-md-1"></div>
+            <div class="inputUserName col-md-4">
+                <input type="text" name="username" id="" placeholder="  Enter your username">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5"></div>
+            <div class="msg1 col-md-4"></div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="inputUserName col-md-1">password:</div>
+            <div class="col-md-1"></div>
+            <div class="inputPassword col-md-4">
+                <input type="password" name="password" id="" placeholder="  Enter your password">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5"></div>
+            <div class="msg2 col-md-4"></div>
+        </div>
+        <br><br>
+        <div class="submit text-center">
+            <button type="submit" class="submitButton">log in</button>
+        </div>
+    </form>
+    <br>
+    <div class="text-center">
+        <div class="noAccount">Not got an account?</div>
+        <div class="signUp">
+            <a href="./sign_up.html">
+                <button class="signUpButton">sign up</button>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<script src="jquery-3.6.4.js"></script>
+<script>
+    const username = document.querySelector('[name=username]')
+    username.addEventListener('change', verifyName)
+
+    function verifyName() {
+        const msg1 = document.querySelector('.msg1')
+        const reg = /^[a-zA-Z0-9]{6,16}$/
+        if (!reg.test(username.value)) {
+            msg1.innerHTML = '&nbsp;&nbsp;&nbsp;Please enter 6 - 16 digits or letters'
+            return false
+        }
+        msg1.innerText = ''
+        return true
+    }
+
+    const password = document.querySelector('[name=password]')
+    password.addEventListener('change', verifyPassword)
+
+    function verifyPassword() {
+        const msg2 = document.querySelector('.msg2')
+        const reg = /^[a-zA-Z0-9-_]{6,20}$/
+        if (!reg.test(password.value)) {
+            msg2.innerHTML = '&nbsp;&nbsp;&nbsp;Please enter 6 - 20 digit letters or symbols'
+            return false
+        }
+        msg2.innerText = ''
+        return true
+    }
+
+    const form = document.querySelector('form')
+    form.addEventListener('submit', function (e) {
+        e.preventDefault()
+        let flag = true
+        if (!verifyName()) {
+            flag = false
+        }
+        if (!verifyPassword()) {
+            flag = false
+        }
+
+        if (flag === true) {
+            $.get('', {username: username.value, password: password.value}, function (data) {
+                if (data === false) {
+                    alert("Incorrect username or password")
+                    this.reset()
+                } else {
+                    alert("Login successfully")
+                    localStorage.setItem('username', username.value)
+                    location.href = './index.html'
+                }
+            })
+
+        }
+
+    })
+
+
+</script>
+
+
+</body>
+</html>

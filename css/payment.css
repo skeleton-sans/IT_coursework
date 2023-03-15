@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: #dcdcdc;
+}
+
+.icon-zhuye {
+    display: inline-block;
+    color: #f28500;
+    font-size: 40px;
+}
+
+h3 {
+    background-color: #ffd966;
+}
+
+.roomType {
+    height: 40px;
+}
+
+
+.roomInfo {
+    height: 150px;
+}
+
+.inputCardNumber {
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.cardNumber {
+    height: 40px;
+    border: skyblue solid 2px;
+    font-size: 20px;
+}
+
+.inputCardHolder{
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.cardHolder{
+    height: 40px;
+    border: skyblue solid 2px;
+    font-size: 20px;
+}
+
+.msg1 {
+    height: 30px;
+    font-size: 14px;
+    font-weight: 700;
+    color: red;
+}
+
+.msg2 {
+    height: 30px;
+    font-size: 14px;
+    font-weight: 700;
+    color: red;
+}
+
+.payButton{
+    background-color: #f28500;
+    font-size: 20px;
+    font-weight: 700;
+}
