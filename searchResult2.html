@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>
+        Search Result
+    </title>
+    
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    
+    <!-- Custom styles for this template -->
+    <link href="https://getbootstrap.com/docs/5.3/examples/headers/headers.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/examples/features/features.css" rel="stylesheet">
+    </head>
+    <nav class="navbar sticky-top" style="background-color:#dcdcdc;">
+      <header class="container d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+        <a href="./index.html" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+          <img src="https://img.icons8.com/ios-glyphs/30/EE7600/home-page--v1.png"/>      
+        </a>
+        <div class="col-md-3 text-end">
+            <a href="./log_in.html">
+                <button type="button" class="btn btn-outline-warning me-2">Login</button></a>
+            <a href="./sign_up.html">
+                <button type="button" class="btn btn-warning">Sign-up</button></a>
+          
+        </div>
+      </header>
+      <div class="px-4 pt-3 mt-3 text-center container d-flex flex-wrap align-items-center justify-content-center">
+        <div class="col-lg-6 mx-auto">
+          <div class="row">
+            <label for="price" class="col-sm-2 col-form-label"><strong>Price</strong></label>
+            <div class="col">
+              <input type="text" class="form-control" placeholder="MIN" aria-label="First name" id= "price">
+            </div>
+            <label for="max" class="col-sm-2 col-form-label">-</label>
+            <div class="col">
+              <input type="text" class="form-control" placeholder="MAX" aria-label="Last name" id="max">
+            </div>
+          </div> <br/>
+          <div class="d-flex align-items-end">
+            <div class = "col">
+              <div class="dropdown">
+                <label for="roomType" ><strong>Room type</strong></label>
+                <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                  All room
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1" id="roomType">
+                  <li><a class="dropdown-item" href="#">Double</a></li>
+                  <li><a class="dropdown-item" href="#">Twin</a></li>
+                  <li><a class="dropdown-item" href="#">Single</a></li>
+                  <li><a class="dropdown-item" href="#">Family</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class = "col">
+              <a class="btn btn btn-outline-danger px-4 gap-3" href="#" role="button">Filter</a>
+            </div>
+          </div> 
+        </div>
+      </div>
+      <div class="container px-4 pt-5 row-cols-1  align-items-center justify-content-center " id="featured-3">
+        <h2 class="pb-2 border-bottom text-center" style="background-color:#FFA500;">Room lists</h2>
+      </div>
+    </nav> 
+    <!-- end of Nav bar -->
+      <!-- room listing section -->
+  <div class="container px-4 py-4" id="featured-3">
+    <div class="row g-4 py-4 row-cols-1 row-cols-lg-3 border-bottom border-3"> 
+      <div class="feature col border-end  border-1 ">
+        <h3 class="text-center">Double room</h3>
+        <div class="d-flex flex-wrap align-items-center justify-content-center">
+          <img src="/Users/wasiwattanasiritham/Desktop/project/hotelbooking/hotel_website/static/img/pic.jpeg"/> 
+        </div>         
+      </div>
+      <div class="feature col border-end border-1">
+        <h3 class="text-center">Information</h3>
+        <div class="text-center row g-4 py-5">
+          <p>Stunning sea-view double rooms come equipped with a super-comfy bed, a power shower, and complimentaty WIFI, giving you everything you need for a restful night's sleep</p>
+        </div>         
+      </div>
+      <div class="feature col ">
+        <h3 class="text-center">Price</h3>
+        <div class="text-center row g-4 py-5">
+          <p> <strong>500 GBP</strong></p>
+        </div>
+        <div class="col d-flex justify-content-center align-items-center">
+          <a class="btn btn-danger  align-items-center justify-content-center" href="./reservation.html" role="button">Book</a>
+        </div>             
+      </div>
+    </div>     
+    <!-- second room -->
+    <div class="row g-4 py-4 row-cols-1 row-cols-lg-3 border-bottom border-3">
+      <div class="feature col border-end border-1">
+        <h3 class="text-center">Double room</h3>
+        <div class="d-flex flex-wrap align-items-center justify-content-center">
+          <img src="/Users/wasiwattanasiritham/Desktop/project/hotelbooking/hotel_website/static/img/pic.jpeg"/> 
+        </div>         
+      </div>
+      <div class="feature col border-end border-1">
+        <h3 class="text-center">Information</h3>
+        <div class="text-center row g-4 py-5">
+          <p>Stunning sea-view double rooms come equipped with a super-comfy bed, a power shower, and complimentaty WIFI, giving you everything you need for a restful night's sleep</p>
+        </div>         
+      </div>
+      <div class="feature col ">
+        <h3 class="text-center">Price</h3>
+        <div class="text-center row g-4 py-5">
+          <p> <strong>500 GBP</strong></p>
+        </div>
+        <div class="col d-flex justify-content-center align-items-center">
+          <a class="btn btn-danger  align-items-center justify-content-center" href="#" role="button">Book</a>
+        </div>             
+      </div>
+    </div>
+    <!-- Third room -->
+       <!-- second room -->
+       <div class="row g-4 py-4 row-cols-1 row-cols-lg-3 border-bottom border-3">
+        <div class="feature col border-end border-1 col-sm-border-bottom">
+          <h3 class="text-center">Double room</h3>
+          <div class="d-flex flex-wrap align-items-center justify-content-center">
+            <img src="/Users/wasiwattanasiritham/Desktop/project/hotelbooking/hotel_website/static/img/pic.jpeg"/> 
+          </div>         
+        </div>
+        <div class="feature col border-end border-1">
+          <h3 class="text-center">Information</h3>
+          <div class="text-center row g-4 py-5">
+            <p>Stunning sea-view double rooms come equipped with a super-comfy bed, a power shower, and complimentaty WIFI, giving you everything you need for a restful night's sleep</p>
+          </div>         
+        </div>
+        <div class="feature col ">
+          <h3 class="text-center">Price</h3>
+          <div class="text-center row g-4 py-5">
+            <p> <strong>500 GBP</strong></p>
+          </div>
+          <div class="col d-flex justify-content-center align-items-center">
+            <a class="btn btn-danger  align-items-center justify-content-center" href="#" role="button">Book</a>
+          </div>             
+        </div>
+      </div>
+    
+  </div>
+  </div>
+        <!-- Bootstrap core JavaScript -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="./jquery-3.6.4.js"></script>
+        <script src="./dropdown.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+        <!-- <script>window.jQuery || document.write('<script src="https://getbootstrap.com/docs/4.2/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="https://getbootstrap.com/docs/4.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-zDnhMsjVZfS3hiP7oCBRmfjkQC4fzxVxFhBx8Hkz2aZX8gEvA/jsP3eXRCvzTofP" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+        <script src="https://getbootstrap.com/docs/4.2/examples/dashboard/dashboard.js"></script> -->
+    </body>
+</html>
